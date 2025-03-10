@@ -1,18 +1,14 @@
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="utf-8" />
-    <title>TP (Maxime, Mehdi)</title>
-</head>
-
-<body>
-    <p>Voici ma page</p>
-</body>
-
-</html>
-
 <?php
 
+$titre = 'MA PAGE HTML';
 
+echo '
+<html>
+<head>
+   <title>' . $titre . '</title>
+</head>
+<body>
+</body>
+</html>
+';
 ?>
