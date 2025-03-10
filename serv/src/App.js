@@ -3,7 +3,7 @@ import React from 'react';
 
 const App = () => {
   return (
-    <div>
+    <div class="bg-yellow-100 p-4">
       <h1>Bienvenue dans mon projet React ! 🚀</h1>
       <p>Voila mon boutton.</p>
       <MyButton />
