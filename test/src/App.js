@@ -5,10 +5,17 @@ const App = () => {
   return (
     <div style={styles.container}>
       <h1>Bienvenue dans mon projet React ! 🚀</h1>
-      <p>Ceci est un composant de base.</p>
+      <p>Voila mon boutton.</p>
+      <MyButton />
     </div>
   );
 };
+
+function MyButton() {
+  return (
+    <button>Je suis un bouton</button>
+  );
+}
 
 const styles = {
   container: {
