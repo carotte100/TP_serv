@@ -1,3 +1,11 @@
+<?php
+
+require('include/crud.php');
+
+$wintons = list_wintons($CONNEXION);
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -22,7 +30,13 @@
     </div>
 
     <div name="catalogue">
-
+        <?php
+        foreach ($wintons as $winton) {
+            echo "<div id=winton>";
+            echo "<p> " . $winton['nom'] . "</p>";
+            echo "</div>";
+        }
+        ?>
     </div>
 
     <div name="footer">
