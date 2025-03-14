@@ -21,8 +21,15 @@
         <h2>voici le site</h2>
     </div>
 
-    <div name="content">
-
+    <div name="connexion">
+        <h2>Connexion</h2>
+        <form method="POST" action="include/connexion.php">
+            <label for="username">Nom d'utilisateur:</label><br>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Mot de passe:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Se connecter</button>
+        </form>
     </div>
 
     <div name="footer">
