@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = mysqli_real_escape_string($CONNEXION, $username);
     $password = mysqli_real_escape_string($CONNEXION, $password);
 
-    $query = "SELECT * FROM utilisateurs WHERE nom = '$username' AND mdp = '$password'";
+    $query = "SELECT * FROM utilisateurs WHERE pseudo = '$username' AND mdp = '$password'";
 
     $result = mysqli_query($CONNEXION, $query);
 
