@@ -4,8 +4,8 @@ import React from 'react';
 const App = () => {
   return (
     <div class="bg-yellow-100 p-4">
-      <h1>Bienvenue dans mon projet React ! 🚀</h1>
-      <p>Voila mon boutton.</p>
+      <h1>Site Maxime et Mehdi</h1>
+      <p>Bouton pour avoir des crédits sociaux</p>
       <MyButton />
     </div>
   );
