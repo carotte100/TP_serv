@@ -30,14 +30,18 @@ $wintons = list_wintons($CONNEXION);
     </div>
 
     <div name="catalogue">
-        <?php
-        foreach ($wintons as $winton) {
-            echo "<div id=winton>";
-            echo "<img src='img/" . $winton['nom'] . ".png'>";
-            echo "<p>" . $winton['nom'] . "</p>";
-            echo "</div>";
-        }
-        ?>
+        <div id="">
+            <?php
+            foreach ($wintons as $winton) {
+                echo "<div id=winton>";
+                echo "<img src='img/" . $winton['nom'] . ".png'>";
+                echo "<p>" . $winton['nom'] . "</p>";
+                echo "<p>" . $winton['prix'] . "</p>";
+                echo "</div>";
+            }
+            ?>
+        </div>
+
     </div>
 
     <div name="footer">
