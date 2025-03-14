@@ -33,7 +33,8 @@ $wintons = list_wintons($CONNEXION);
         <?php
         foreach ($wintons as $winton) {
             echo "<div id=winton>";
-            echo "<p> " . $winton['nom'] . "</p>";
+            echo "<img src='img/" . $winton['nom'] . ".png'>";
+            echo "<p>" . $winton['nom'] . "</p>";
             echo "</div>";
         }
         ?>
