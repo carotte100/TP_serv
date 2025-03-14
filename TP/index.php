@@ -9,13 +9,14 @@
 </head>
 
 <body>
-    <h1>Bienvenue sur mon serveur PHP 🚀</h1>
+    <h1>Boutique de WINTON</h1>
 
     <?php
     echo "<p>Date et heure actuelles : " . date('Y-m-d H:i:s') . "</p>";
+    echo "<p> It's WINTON time !!!! </p>";
     ?>
 
-    <p>Ceci est un fichier PHP qui fonctionne correctement ! 🎉</p>
+    <h2>voici le site</h2>
 </body>
 
 </html>
