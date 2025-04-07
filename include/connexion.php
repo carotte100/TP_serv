@@ -1,4 +1,9 @@
 <?php
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+
 require('/../connect.php');
 
 $CONNEXION = mysqli_connect(SERVEUR_BD, LOGIN_BD, PASS_BD);
