@@ -17,12 +17,10 @@ RUN git clone https://github.com/carotte100/TP_serv.git html
 # On va dire à Apache d'utiliser le dossier TP comme racine du site
 ENV APACHE_DOCUMENT_ROOT /var/www/html/TP
 
-# Mise à jour du VirtualHost d'Apache pour le nouveau chemin
-RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/TP|' /etc/apache2/sites-available/000-default.conf
-
 # Copie du fichier de connexion si besoin
 WORKDIR /var/www/html/TP
-# RUN cp connect.php.docker connect.php  # Décommente si tu as ce fichier
+
+# RUN cp connect.php.docker connect.php
 
 # Ouvre le port HTTP
 EXPOSE 80

@@ -1,6 +1,6 @@
 <?php
 
-require(__DIR__ . '/../connect.php');
+require_once(__DIR__ . '/../connect.php');
 
 $CONNEXION = mysqli_connect(SERVEUR_BD, LOGIN_BD, PASS_BD);
 //Connexion au serveur de bases de données

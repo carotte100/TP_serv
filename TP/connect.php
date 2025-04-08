@@ -1,15 +1,18 @@
 <?php
-define("SERVEUR_BD", "c_mariadb");
-define('LOGIN_BD', 'userbd');
-define('PASS_BD', 'merdi');
-define('NOM_BD', 'tp_serveur');
+$lines = file('../.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
-$connection = mysqli_connect(SERVEUR_BD, LOGIN_BD, PASS_BD, NOM_BD);
+foreach ($lines as $line) {
+    $line = trim($line);
+    if ($line === '' || strpos($line, '#') === 0)
+        continue;
 
-if (!$connection) {
-    die("Erreur de connexion : " . mysqli_connect_error());
-} else {
-    echo "Connexion réussie.";
+    [$key, $value] = explode('=', $line, 2);
+    putenv(trim($key) . '=' . trim($value));
 }
 
+$host = getenv('HOST');
+$dbname = getenv('NOM_BD');
+$user = getenv('UTILISATEUR_BD');
+$pass = getenv('MDP_BD');
+$passroot = getenv('MDP_ROOT');
 ?>
