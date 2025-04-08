@@ -1,24 +1,19 @@
 <?php
-
 require_once(__DIR__ . '/../connect.php');
 
-$CONNEXION = mysqli_connect(SERVEUR_BD, LOGIN_BD, PASS_BD);
-//Connexion au serveur de bases de données
+$CONNEXION = mysqli_connect(SERVEUR_BD, LOGIN_BD, PASS_BD, NOM_BD);
+
+// Connexion au serveur de bases de données
 if (mysqli_connect_errno()) {
     echo 'Désolé, connexion au serveur ' . SERVEUR_BD . ' impossible, ' . mysqli_connect_error(), "\n";
     exit();
 }
-// Sélection de la base de données
-mysqli_select_db($CONNEXION, NOM_BD);
-if (mysqli_connect_errno()) {
-    echo 'Désolé, accès à la base ' . NOM_BD . ' impossible, ' . mysqli_connect_error(), "\n";
+
+// Spécification de l'encodage UTF-8 pour dialoguer avec la BD
+if (!mysqli_set_charset($CONNEXION, 'utf8')) {
+    echo 'Erreur au chargement de l\'encodage UTF-8 : ', mysqli_connect_error(), "\n";
     exit();
 }
-// Spécification de l'encodage UTF-8 pour dialoguer avec la BD
-if (!mysqli_set_charset($CONNEXION, 'UTF8')) {
-    echo 'Erreur au chargement de l\'encodage UTF-8 : ', mysqli_connect_error(), "\n";
-}
-
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
