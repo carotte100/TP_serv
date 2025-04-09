@@ -7,19 +7,23 @@ services:
       - MARIADB_DATABASE=tp_serveur
       - MARIADB_ROOT_PASSWORD=root
     ports:
-      - 3306:3306
+      - "3306:3306"
 
   monapache:
-    image: monapache
+    build: ./monapache
     ports:
       - "80:80"
+    depends_on:
+      - mariadb
 
   phpmyadmin:
     image: phpmyadmin
     environment:
       - PMA_HOST=mariadb
     ports:
-      - 8080:80
+      - "8080:80"
+    depends_on:
+      - mariadb
 
   monubuntu:
-    image: monubuntu
+    build: ./monubuntu
