@@ -1,18 +1,6 @@
 <?php
-$lines = file('/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
-foreach ($lines as $line) {
-    $line = trim($line);
-    if ($line === '' || strpos($line, '#') === 0) {
-        continue;
-    }
-
-    [$key, $value] = explode('=', $line, 2);
-    define(trim($key), trim($value));
-}
-
-define('SERVEUR_BD', getenv('HOST'));
-define('LOGIN_BD', getenv('UTILISATEUR_BD'));
-define('PASS_BD', getenv('MDP_BD'));
-define('NOM_BD', getenv('NOM_BD'));
+define('SERVEUR_BD', '172.17.0.3');
+define('LOGIN_BD', 'userbd');  // Utilisateur défini dans Docker
+define('PASS_BD', 'passwordbd');  // Mot de passe défini dans Docker pour userbd
+define('NOM_BD', 'tp_serveur');  // Nom de la base de données
 ?>
