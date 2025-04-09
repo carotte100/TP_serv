@@ -16,3 +16,6 @@ RUN git clone https://github.com/carotte100/TP_serv.git .
 
 # Ouvre le port HTTP
 EXPOSE 80
+
+# Commande par défaut pour lancer Apache
+CMD ["apache2-foreground"]
