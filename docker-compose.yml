@@ -12,7 +12,7 @@ services:
   monapache:
     build: ./monapache
     ports:
-      - "80:80"
+      - "81:80"
     depends_on:
       - mariadb
 
