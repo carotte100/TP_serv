@@ -1,4 +1,16 @@
 services:
+  web:
+      build: .
+      container_name: apache
+      ports:
+        - "80:80"
+      volumes:
+        - .:/var/www/html
+      depends_on:
+        - mariadb
+      networks:
+        - backend
+
   mariadb:
     image: mariadb:latest 
     container_name: mariadb
@@ -9,6 +21,8 @@ services:
       - MARIADB_ROOT_PASSWORD=root
     ports:
       - "3306:3306"
+    networks:
+      - backend
 
   monapache:
     build: ./monapache
@@ -28,3 +42,7 @@ services:
 
   monubuntu:
     build: ./monubuntu
+
+  networks:
+    backend:
+      driver: bridge
