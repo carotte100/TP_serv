@@ -1,12 +1,4 @@
 services:
-  web:
-    build: .
-    container_name: apache
-    ports:
-      - "80:80"
-    depends_on:
-      - mariadb
-
   mariadb:
     image: mariadb:latest 
     container_name: mariadb
@@ -29,7 +21,7 @@ services:
     image: phpmyadmin
     environment:
       - PMA_HOST=mariadb
-    ports:
+    ports:  
       - "8081:80"
     depends_on:
       - mariadb
