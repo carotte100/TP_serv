@@ -1,6 +1,7 @@
 services:
   mariadb:
-    image: mariadb
+    image: mariadb:latest 
+    container_name: mariadb
     environment:
       - MARIADB_USER=userdb
       - MARIADB_PASSWORD=merdi
@@ -16,7 +17,7 @@ services:
     depends_on:
       - mariadb
 
-  phpmyadmin:
+  phpmyadmin: 
     image: phpmyadmin
     environment:
       - PMA_HOST=mariadb
